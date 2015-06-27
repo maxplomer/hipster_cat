@@ -127,9 +127,10 @@ class Cat
 
   ]
 
-  attr_reader: name, : color, : breed, : sex, : birthdate
+  attr_reader :name, :color, :breed, :sex, :birthdate
 
-  def initialize(name)@ name = name
+  def initialize()
+  	@name = name
   end
 
   def age
