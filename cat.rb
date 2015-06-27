@@ -159,6 +159,7 @@ class Cat
   }
 
   attr_reader :name, :color, :sex, :birthdate, :description
+  attr_reader :sweaters, :miles_walked
 
   def initialize
     @name        = get_name
@@ -166,6 +167,9 @@ class Cat
     @sex         = get_sex
     @birthdate   = get_birthdate
     @description = get_description
+    @sweaters = []
+    @miles_walked = 0
+
   end
 
   def age
@@ -174,6 +178,11 @@ class Cat
 
   def take_for_walk
     #put this in a module, just like is my cat cool
+    # ...... goes across the screen takes like 10 seconds
+  end
+
+  def buy_cat_a_sweater
+    #have different style sweaters, christmas, etc
   end
 
   private
