@@ -119,20 +119,51 @@ class Cat
     'Yoda'
   ]
 
-  COLORS = [
+  COLORS = {
+    'Solid': [
+      'Black',
+      'Gray',
+      'White',
+      'Chocolate or Brown'
+    ],
+    'Tabby or Tiger Colors': [
+      'Black Tiger',
+      'Brown Tiger',
+      'Gray Tiger',
+      'Orange Tiger'
+    ],
+    'With White': [
+      'Black & White',
+      'Gray & White',
+      'Orange Tiger & White',
+      'Brown Tiger & White'
+    ],
+    'Calicos, Torties and Torbies': [
+      'Calico',
+      'Tortie',
+      'Torbie'
+    ],
+    'Dilutes or Shaded Colors': [
+      'Dilute Calico',
+      'Dilute Tortie',
+      'Buff'
+    ]
+    'Pointed Colors': [
+      'Chocolate Point',
+      'Flame Point',
+      'Lynx Point',
+      'Seal Point',
+      'Seal Lynx Point',
+      'Snowshoe'
+    ]
+  }
 
-  ]
-
-  BREEDS = [
-
-  ]
-
-  attr_reader :name, :color, :breed, :sex, :birthdate, :description
+  attr_reader :name, :color, :sex, :birthdate, :description
 
   def initialize()
     @name = NAMES.shuffle.first
-    @color = 'blue'
-    @birthday = 
+    @color =  #going to use rand(array.length) or whatever
+    @birthday = generate_birth_date
   end
 
   def age
@@ -142,10 +173,12 @@ class Cat
   private
 
   def generate_birth_date
-    Time.at(rand * Time.now.to_i) #This will generate a random date from epoch to now
+    age = gaussian(8, 2, lambda { Kernel.rand } )[rand(2)]
+    Time.at(Time.now.to_i - age * 3.15569e7)
   end
 
   def gaussian(mean, stddev, rand)
+    # Box–Muller transform
     theta = 2 * Math::PI * rand.call
     rho = Math.sqrt(-2 * Math.log(1 - rand.call))
     scale = stddev * rho
