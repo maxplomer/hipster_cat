@@ -1,1 +1,3 @@
-job.rb
+class Job
+
+end

@@ -160,7 +160,7 @@ class Cat
 
   attr_reader :name, :color, :sex, :birthdate, :description
 
-  def initialize()
+  def initialize
     @name        = get_name
     @color       = get_color
     @sex         = get_sex
@@ -170,6 +170,10 @@ class Cat
 
   def age
     birthdate.ago.to_words.gsub('ago', 'old')
+  end
+
+  def take_for_walk
+    #put this in a module, just like is my cat cool
   end
 
   private
