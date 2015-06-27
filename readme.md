@@ -2,6 +2,7 @@
 
  - is my cat cool feature?, if it gets walked enough and has a cat sweater?
  - take my cat for a walk, takes like 10 seconds and the cat moves back and forth, could work well for a scrolling terminal style game or doesnt matter just display anything
+   - show determining...... with adding ...'s ass you wait
 
  - you can move to la if you have enough credits
  - might want city model that links to different stuff i have to create and put in
@@ -27,3 +28,5 @@
 
 
  kind of like minesweeper, poker, chess/checkers interface?
+
+ - use https://github.com/gosu/gosu to redo interface
