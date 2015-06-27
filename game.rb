@@ -1,7 +1,9 @@
+require 'yaml'
+
 class Game
   attr_reader :players, :pot, :deck
 
-  def initialize
+  def initialize(filename = '')
   	@players = []
   	@cities = []
   end
@@ -27,4 +29,13 @@ class Game
   end
 
 
+end
+
+
+# Do this if running $ ruby game.rb in command line
+if __FILE__ == $PROGRAM_NAME
+  puts "If you want to load from save game"
+  puts "enter save file name, otherwise just press enter"
+  filename = gets.chomp
+  Game.new(filename).play
 end
