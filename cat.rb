@@ -120,35 +120,35 @@ class Cat
   ]
 
   COLORS = {
-    'Solid': [
+    'Solid' => [
       'Black',
       'Gray',
       'White',
       'Chocolate or Brown'
     ],
-    'Tabby or Tiger Colors': [
+    'Tabby or Tiger Colors' => [
       'Black Tiger',
       'Brown Tiger',
       'Gray Tiger',
       'Orange Tiger'
     ],
-    'With White': [
+    'With White' => [
       'Black & White',
       'Gray & White',
       'Orange Tiger & White',
       'Brown Tiger & White'
     ],
-    'Calicos, Torties and Torbies': [
+    'Calicos, Torties and Torbies' => [
       'Calico',
       'Tortie',
       'Torbie'
     ],
-    'Dilutes or Shaded Colors': [
+    'Dilutes or Shaded Colors' => [
       'Dilute Calico',
       'Dilute Tortie',
       'Buff'
-    ]
-    'Pointed Colors': [
+    ],
+    'Pointed Colors' => [
       'Chocolate Point',
       'Flame Point',
       'Lynx Point',
@@ -161,23 +161,32 @@ class Cat
   attr_reader :name, :color, :sex, :birthdate, :description
 
   def initialize()
-    @name = NAMES.shuffle.first
-    @color =  pick_a_color
-    @birthday = generate_birth_date
+    @name        = get_name
+    @color       = get_color
+    @sex         = get_sex
+    @birthdate   = get_birthdate
+    @description = get_description
   end
 
   def age
-    birth_date.to_words
+    birthdate.to_words
   end
 
   private
 
-  def pick_a_color
-
-
+  def get_name
+    NAMES.sample
   end
 
-  def generate_birth_date
+  def get_sex
+    ['male', 'female'].sample
+  end
+
+  def get_color
+    COLORS[COLORS.keys.sample].sample
+  end
+
+  def get_birthdate
     age = gaussian(8, 2, lambda { Kernel.rand } )[rand(2)]
     Time.at(Time.now.to_i - age * 3.15569e7)
   end
@@ -190,6 +199,10 @@ class Cat
     x = mean + scale * Math.cos(theta)
     y = mean + scale * Math.sin(theta)
     return x, y
+  end
+
+  def get_description
+    'helloworld'
   end
 
 end
