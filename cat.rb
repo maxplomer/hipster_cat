@@ -162,7 +162,7 @@ class Cat
 
   def initialize()
     @name = NAMES.shuffle.first
-    @color =  #going to use rand(array.length) or whatever
+    @color =  pick_a_color
     @birthday = generate_birth_date
   end
 
@@ -171,6 +171,11 @@ class Cat
   end
 
   private
+
+  def pick_a_color
+
+
+  end
 
   def generate_birth_date
     age = gaussian(8, 2, lambda { Kernel.rand } )[rand(2)]
