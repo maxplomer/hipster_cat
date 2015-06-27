@@ -159,22 +159,22 @@ class Cat
   }
 
   SWEATER = {
-  	colors: [
-  	  'black',
-  	  'grey'
-  	]
-  	materials: [
-  	  'cotton',
-  	  'wool',
-  	  'synthetic fibers'
-  	]
-  	types: [
+    colors: [
+      'black',
+      'grey'
+    ],
+    materials: [
+      'cotton',
+      'wool',
+      'synthetic fibers'
+    ],
+    types: [
       'hoodie',
       'pullover',
       'jumper',
       'sweater vest',
       'hot dog sweater'
-  	]
+    ]
   }
 
   attr_reader :name, :color, :sex, :birthdate
@@ -187,7 +187,6 @@ class Cat
     @color        = get_color
     @sex          = get_sex
     @birthdate    = get_birthdate
-    @description  = get_description
     @sweaters     = []
     @miles_walked = 0
 
@@ -212,11 +211,12 @@ class Cat
       puts "You dont have enough money to buy a cat sweater"
     else
       sweater = {
-        color: SWEATER[:colors].sample
-        material: SWEATER[:colors].sample
-        type: SWEATER[:colors].sample
+        color: SWEATER[:colors].sample,
+        material: SWEATER[:materials].sample,
+        type: SWEATER[:types].sample
       }
       @sweaters << sweater
+      owner.money -= 20
       puts "You got #{@name} a #{sweater[:color]} #{sweater[:material]} #{sweater[:type]}"
     end
   end
