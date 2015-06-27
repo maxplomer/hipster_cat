@@ -127,14 +127,35 @@ class Cat
 
   ]
 
-  attr_reader :name, :color, :breed, :sex, :birthdate
+  attr_reader :name, :color, :breed, :sex, :birthdate, :description
 
   def initialize()
-  	@name = name
+    @name = NAMES.shuffle.first
+    @color = 'blue'
+    @birthday = 
   end
 
   def age
     birth_date.to_words
   end
 
+  private
+
+  def generate_birth_date
+    Time.at(rand * Time.now.to_i) #This will generate a random date from epoch to now
+  end
+
+  def gaussian(mean, stddev, rand)
+    theta = 2 * Math::PI * rand.call
+    rho = Math.sqrt(-2 * Math.log(1 - rand.call))
+    scale = stddev * rho
+    x = mean + scale * Math.cos(theta)
+    y = mean + scale * Math.sin(theta)
+    return x, y
+  end
+
 end
+
+
+
+
