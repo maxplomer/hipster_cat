@@ -3,7 +3,7 @@ require 'time-lord'
 class Cat
 
   NAMES = [
-    'fro',
+    'Afro',
     'Archibald',
     'Babe',
     'Bacon',
