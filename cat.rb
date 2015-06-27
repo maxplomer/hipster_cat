@@ -158,16 +158,37 @@ class Cat
     ]
   }
 
-  attr_reader :name, :color, :sex, :birthdate, :description
+  SWEATER = {
+  	colors: [
+  	  'black',
+  	  'grey'
+  	]
+  	materials: [
+  	  'cotton',
+  	  'wool',
+  	  'synthetic fibers'
+  	]
+  	types: [
+      'hoodie',
+      'pullover',
+      'jumper',
+      'sweater vest',
+      'hot dog sweater'
+  	]
+  }
+
+  attr_reader :name, :color, :sex, :birthdate
   attr_reader :sweaters, :miles_walked
 
+  #is my cat cool?, no it hasn't walked enough miles for its age
+
   def initialize
-    @name        = get_name
-    @color       = get_color
-    @sex         = get_sex
-    @birthdate   = get_birthdate
-    @description = get_description
-    @sweaters = []
+    @name         = get_name
+    @color        = get_color
+    @sex          = get_sex
+    @birthdate    = get_birthdate
+    @description  = get_description
+    @sweaters     = []
     @miles_walked = 0
 
   end
@@ -177,12 +198,27 @@ class Cat
   end
 
   def take_for_walk
-    #put this in a module, just like is my cat cool
-    # ...... goes across the screen takes like 10 seconds
+    100.times do 
+      sleep(0.1)
+      print '.'
+    end
+    puts '.'
+
+    @miles_walked += 1
   end
 
-  def buy_cat_a_sweater
-    #have different style sweaters, christmas, etc
+  def buy_cat_a_sweater(owner)
+    if (owner.money < 20)
+      puts "You dont have enough money to buy a cat sweater"
+    else
+      sweater = {
+        color: SWEATER[:colors].sample
+        material: SWEATER[:colors].sample
+        type: SWEATER[:colors].sample
+      }
+      @sweaters << sweater
+      puts "You got #{@name} a #{sweater[:color]} #{sweater[:material]} #{sweater[:type]}"
+    end
   end
 
   private
@@ -214,12 +250,4 @@ class Cat
     return x, y
   end
 
-  def get_description
-    'helloworld'
-  end
-
 end
-
-
-
-
