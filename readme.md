@@ -32,3 +32,5 @@
  - use https://github.com/gosu/gosu to redo interface
 
  - want an ai player
+
+ - should be a pretty indepth menu, a tree structure for selection, do you want to apply for a job?, then chooose one of the jobs, then you have to type in the long annoying number, thne you wait for 10 second to see if you got the number write aka if you got the job
