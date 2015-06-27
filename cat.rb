@@ -169,7 +169,7 @@ class Cat
   end
 
   def age
-    birthdate.to_words
+    birthdate.ago.to_words.gsub('ago', 'old')
   end
 
   private
