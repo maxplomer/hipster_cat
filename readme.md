@@ -30,3 +30,5 @@
  kind of like minesweeper, poker, chess/checkers interface?
 
  - use https://github.com/gosu/gosu to redo interface
+
+ - want an ai player
