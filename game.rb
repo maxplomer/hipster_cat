@@ -6,23 +6,18 @@ class Game
   	@cities = []
   end
 
-
-
   def play
   	play_round until game_over?
   	game_over
   end
 
   def play_round
-  	@cities.each do |city|
-
-
     # generate random cats jobs apts, from lists, random generator, job might be taken by player 1
-    @city.shuffle 
+  	@cities.each(&:shuffle)
+
     # do they want to take their cat for a walk if have one etc?
-    @players.each do |player|
-      prompt_user_for_action(player) 
-    end
+    @players.each(&:prompt_user_for_action)
+
     end_round
   end
 
