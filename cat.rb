@@ -206,6 +206,8 @@ class Cat
     @miles_walked += 1
   end
 
+  #should be able to pick which can you want to add a sweater to
+  #also need to be able to save game info to YAML and reload
   def buy_cat_a_sweater(owner)
     if (owner.money < 20)
       puts "You dont have enough money to buy a cat sweater"
