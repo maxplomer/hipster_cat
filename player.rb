@@ -34,7 +34,7 @@ class Player
     puts "options: adopt a cat, move"
     str = gets.chomp
     if str == "adopt a cat"
-      puts "call the adopt a cat function"
+      puts "call the adopt a cat function" #implement might need city we are in
     elsif str == "move"
       puts "call the move function"
     else
