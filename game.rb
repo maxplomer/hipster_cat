@@ -28,7 +28,7 @@ class Game
 
     # do they want to take their cat for a walk if have one etc?
     @players.each do |player|
-      prompt_user_for_action(@cities)
+      player.prompt_user_for_action(@cities)
     end
 
     #####end_round

@@ -31,7 +31,7 @@ class Player
 
   def prompt_user_for_action(cities)
     puts "What do you want to do?"
-    puts "options: adopt a cat, move, save game"
+    puts "options: adopt a cat, move, get a job, save game" #go to sleep?
     command = gets.chomp
 
     case command
@@ -41,6 +41,9 @@ class Player
     when "move"
       puts "call the move function"
       move(cities)
+    when "get a job"
+      puts "call the get a job function"
+      get_a_job
     when "save game"
       puts "calling the save game method, hasn't been created yet"
     else
@@ -69,11 +72,23 @@ class Player
     end
   end
 
-  def move
-    puts "Your current location is #{@location.name}"
+  def get_a_job
+    max_jobs = @location.jobs.length
+    puts "There are the following jobs in #{@location.name}"
     #going to need to implemenet apartments and jobs because need to make money
     #before moving, 
 
+    @location.jobs.each_with_index do |job, index|
+      puts "Job #{index + 1}: #{job.position} at #{job.company}" 
+    end
+
+    puts "Input a job number 1-#{max_jobs}"
+    job_number = gets.chomp.to_i
+
+  end
+
+  def move
+    #clear jobs and apartments, keep cats with you
   end
 
 end
