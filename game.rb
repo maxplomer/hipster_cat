@@ -41,8 +41,8 @@ class Game
 
   def game_over?
     # game over if anyone has more than 10 cats
-    
-    @player.each do |player|
+
+    @players.each do |player|
       return true if player.cats.length > 10
     end
 
