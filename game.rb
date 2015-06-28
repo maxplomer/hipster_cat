@@ -29,9 +29,7 @@ class Game
 
     
     prompt_users_for_action
-
-
-    @current_time += 1.day
+    increment_day
     calculate_income_and_expenses
   end
 
@@ -59,6 +57,10 @@ class Game
     @players.each do |player|
       player.prompt_user_for_action(@cities)
     end
+  end
+
+  def increment_day
+    @current_time += 60 * 60 * 24
   end
 
   def calculate_income_and_expenses
