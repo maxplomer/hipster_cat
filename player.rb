@@ -86,7 +86,7 @@ class Player
   end
 
   def give_user_cat_test(cat_name)
-    sum = cat_name.chars.map(&:my_ord).inject(:+)
+    sum = cat_name.gsub(' ','').chars.map(&:my_ord).inject(:+)
     puts "To show your love for #{cat_name}, please sum the number of each letter that corresponds to its order in the alphabet"
     puts "(for example:  Sam   becomes   19 + 1 + 13 = 33 )"
     inputted_sum = gets.chomp.to_i
