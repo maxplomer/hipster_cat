@@ -8,7 +8,7 @@ class Player
     #should be rescue loop for all gets
     num_players = gets.chomp
 
-    num_player.times do |i|
+    num_players.times do |i|
       puts "enter name and sex for player #{i + 1} (example: Joe male)"
       str = gets.chomp.split
       result << Player.new(str.first, str.last)
