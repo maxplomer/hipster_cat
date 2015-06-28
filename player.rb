@@ -34,7 +34,7 @@ class Player
     puts "options: adopt a cat, move"
     str = gets.chomp
     if str == "adopt a cat"
-      puts "call the adopt a cat function" #implement might need city we are in
+      puts "Calling the adopt a cat function...."
       adopt_a_cat
     elsif str == "move"
       puts "call the move function"
@@ -45,6 +45,22 @@ class Player
   end
 
   def adopt_a_cat
+    max_cats = @location.cats.length
+    puts "There are the following cats in #{@location.name}"
+    @location.cats.each_with_index do |cat, index|
+      puts "Cat #{index + 1}: #{cat.name} #{cat.age} #{cat.sex} #{cat.color}" 
+    end
+
+    puts "Input a cat number 1-#{max_cats}"
+    cat_number = gets.chomp.to_i
+
+    if cat_number.is_a? Numeric && cat_number.between(1, max_cats)
+      self.cats << @location.cats.delete_at(cat_number)
+      puts "Congrats you adopted #{self.cats.last.name}"
+      puts "Your currently have #{self.cats.length} cats"
+    else
+      puts "You messed up adopting a cat"
+    end
 
   end
 
