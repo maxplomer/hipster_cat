@@ -12,13 +12,13 @@ class Game
       #@board = YAML::load(var)
     else
       @current_time = Time.now
-      @players = Player::prompt_user_for_player_info
       @cities = City::get_default_cities
+      @players = Player::prompt_user_for_player_info(@cities)
     end
   end
 
   def play
-  	play_round until game_over?
+  	#play_round until game_over?
     p @players
     p @cities
   	game_over
