@@ -8,8 +8,8 @@ class Game
 
   def initialize(filename = '')
     unless filename == ''
-      #var = File.readlines(filename).join
-      #@board = YAML::load(var)
+      var = File.readlines(filename).join
+      self.replace(YAML::load(var))
     else
       @current_time = Time.now
       @cities = City::get_default_cities
@@ -27,6 +27,13 @@ class Game
     File.open('saved_game.txt', 'w') do |f|
       f.puts(saved_game)
     end
+  end
+
+  def replace(data)
+    #self.instance_variables.replace(data.instance_variables)
+    @current_time = data.current_time
+    @cities = data.cities
+    @players = data.players
   end
 
   private
