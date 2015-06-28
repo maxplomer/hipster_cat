@@ -29,7 +29,7 @@ class Player
     @cats = []
   end
 
-  def prompt_user_for_action
+  def prompt_user_for_action(cities)
     puts "What do you want to do?"
     puts "options: adopt a cat, move"
     str = gets.chomp
@@ -38,6 +38,7 @@ class Player
       adopt_a_cat
     elsif str == "move"
       puts "call the move function"
+      move(cities)
     else
       puts "Try again..."
       prompt_user_for_action
@@ -62,6 +63,12 @@ class Player
     else
       puts "You messed up adopting a cat"
     end
+  end
+
+  def move
+    puts "Your current location is #{@location.name}"
+    #going to need to implemenet apartments and jobs because need to make money
+    #before moving, 
 
   end
 
