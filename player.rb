@@ -47,6 +47,7 @@ class Player
   def adopt_a_cat
     max_cats = @location.cats.length
     puts "There are the following cats in #{@location.name}"
+    puts "(Note: each cat cost $1 per day)"
     @location.cats.each_with_index do |cat, index|
       puts "Cat #{index + 1}: #{cat.name} #{cat.age} #{cat.sex} #{cat.color}" 
     end
