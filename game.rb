@@ -1,6 +1,7 @@
 require 'yaml'
 require_relative './city'
 require_relative './player'
+require_relative './cat'
 
 class Game
   #attr_reader :players, :pot, :deck
@@ -11,6 +12,7 @@ class Game
       #var = File.readlines(filename).join
       #@board = YAML::load(var)
     else
+      @current_time = Time.now
       @players = Player::prompt_user_for_player_info
       @cities = City::get_default_cities
     end
