@@ -31,14 +31,18 @@ class Player
 
   def prompt_user_for_action(cities)
     puts "What do you want to do?"
-    puts "options: adopt a cat, move"
-    str = gets.chomp
-    if str == "adopt a cat"
+    puts "options: adopt a cat, move, save game"
+    command = gets.chomp
+
+    case command
+    when "adopt a cat"
       puts "Calling the adopt a cat function...."
       adopt_a_cat
-    elsif str == "move"
+    when "move"
       puts "call the move function"
       move(cities)
+    when "save game"
+      puts "calling the save game method, hasn't been created yet"
     else
       puts "Try again..."
       prompt_user_for_action
