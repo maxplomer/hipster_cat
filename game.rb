@@ -20,6 +20,8 @@ class Game
   def play
   	play_round until game_over?
   	game_over
+
+    nil
   end
 
   def save
@@ -27,13 +29,19 @@ class Game
     File.open('saved_game.txt', 'w') do |f|
       f.puts(saved_game)
     end
+
+    nil
   end
 
   def replace(data)
-    #self.instance_variables.replace(data.instance_variables)
-    @current_time = data.current_time
-    @cities = data.cities
-    @players = data.players
+    vars = data.instance_variables
+
+    vars.each do |var|
+      value = data.instance_variable_get(var)
+      self.instance_variable_set(var, value)
+    end
+
+    nil
   end
 
   private
@@ -47,14 +55,20 @@ class Game
     prompt_users_for_action
     increment_day
     calculate_income_and_expenses
+
+    nil
   end
 
   def print_date
     puts "\nCurrent date is: #{@current_time.month}/#{@current_time.day}/#{@current_time.year}\n\n"
+  
+    nil
   end
 
   def game_over
     puts "the game is over"
+
+    nil
   end
 
   def game_over?
@@ -74,14 +88,20 @@ class Game
     @players.each do |player|
       player.prompt_user_for_action(self)
     end
+
+    nil
   end
 
   def increment_day
     @current_time += 60 * 60 * 24
+
+    nil
   end
 
   def calculate_income_and_expenses
     puts "CALCULATING INCOME AND EXPENSES NOT CREATED YET"
+
+    nil
   end
 end
 
