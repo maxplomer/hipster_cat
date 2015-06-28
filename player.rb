@@ -30,7 +30,7 @@ class Player
   end
 
   def prompt_user_for_action(cities)
-    puts "What do you want to do?"
+    puts "Hey #{self.name}, what do you want to do today?"
     puts "options: adopt a cat, move, get a job, save game" #go to sleep?
     command = gets.chomp
 

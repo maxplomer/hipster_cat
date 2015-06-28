@@ -5,3 +5,12 @@ and new errors generated
 
 
 save game to yaml file
+
+
+todo: 
+
+moving / expeneses-income / saving / take cat for walk
+
+
+quit job/ get rid of cat?
+
