@@ -1,5 +1,13 @@
 class Player
 
+  def Player.prompt_user_for_player_info
+    puts "how many players are playing?"
+
+    #should be rescue loop
+    num_players = gets.chomp
+
+  end
+
   attr_accessor :money, :location, :apartment
   attr_reader :name, :sex, :jobs, :cats
 
