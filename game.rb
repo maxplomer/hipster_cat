@@ -1,11 +1,19 @@
 require 'yaml'
+require_relative './city'
+require_relative './player'
 
 class Game
-  attr_reader :players, :pot, :deck
+  #attr_reader :players, :pot, :deck
+  attr_reader :current_time, :players, :cities
 
   def initialize(filename = '')
-  	@players = []
-  	@cities = []
+    unless filename == ''
+      #var = File.readlines(filename).join
+      #@board = YAML::load(var)
+    else
+      @players = Player::prompt_user_for_player_info
+      @cities = City::get_default_cities
+    end
   end
 
   def play
