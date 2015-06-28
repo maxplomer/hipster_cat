@@ -1,0 +1,7 @@
+everything needs to be rescued heavily
+
+
+and new errors generated
+
+
+save game to yaml file
