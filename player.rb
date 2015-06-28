@@ -54,6 +54,11 @@ class Player
 
   def adopt_a_cat
     max_cats = @location.cats.length
+    if max_cats == 0
+      puts "There are no cats to adopt"
+      return
+    end
+
     puts "There are the following cats in #{@location.name}"
     puts "(Note: each cat cost $1 per day)"
     @location.cats.each_with_index do |cat, index|
@@ -74,6 +79,12 @@ class Player
 
   def get_a_job
     max_jobs = @location.jobs.length
+
+    if max_jobs == 0
+      puts "There are no jobs to get"
+      return
+    end
+
     puts "There are the following jobs in #{@location.name}"
     #going to need to implemenet apartments and jobs because need to make money
     #before moving, 
@@ -84,6 +95,14 @@ class Player
 
     puts "Input a job number 1-#{max_jobs}"
     job_number = gets.chomp.to_i
+
+    if (job_number.is_a? Numeric) && job_number.between?(1, max_jobs)
+      self.jobs << @location.jobs.delete_at(job_number - 1)
+      puts "Congrats you got the job #{self.jobs.last.position} at #{self.jobs.last.company}"
+      puts "Your currently have #{self.jobs.length} job#{'s' if self.jobs.length != 1}"
+    else
+      puts "You messed up getting a job"
+    end
 
   end
 
