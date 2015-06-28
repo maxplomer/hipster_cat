@@ -18,6 +18,8 @@ class Game
 
   def play
   	#####play_round until game_over?
+    p @players
+    p @cities
   	game_over
   end
 

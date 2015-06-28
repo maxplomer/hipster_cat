@@ -5,13 +5,12 @@ class Player
 
     puts "how many players are playing?"
 
-    #should be rescue loop for all gets
-    num_players = gets.chomp
+    num_players = gets.chomp.to_i # if not valid input will just be zero and game over
 
     num_players.times do |i|
       puts "enter name and sex for player #{i + 1} (example: Joe male)"
-      str = gets.chomp.split
-      result << Player.new(str.first, str.last)
+      str = gets.chomp.split 
+      result << Player.new(str.first, str.last) # should be rescue loop 
     end
 
     result
