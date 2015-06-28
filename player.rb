@@ -31,18 +31,17 @@ class Player
 
   def prompt_user_for_action(cities)
     puts "Hey #{self.name}, what do you want to do today?"
-    puts "options: adopt a cat, move, get a job, save game" #go to sleep?
+    puts "options: adopt a cat, take cat for walk, move, get a job, save game"
     command = gets.chomp
 
     case command
     when "adopt a cat"
-      puts "Calling the adopt a cat function...."
       adopt_a_cat
+    when "take cat for walk"
+      take_cat_for_walk
     when "move"
-      puts "call the move function"
       move(cities)
     when "get a job"
-      puts "call the get a job function"
       get_a_job
     when "save game"
       puts "calling the save game method, hasn't been created yet"
@@ -51,6 +50,8 @@ class Player
       prompt_user_for_action
     end
   end
+
+  private
 
   def adopt_a_cat
     max_cats = @location.cats.length
@@ -90,6 +91,10 @@ class Player
     puts "(for example:  Sam   becomes   19 + 1 + 13 = 33 )"
     inputted_sum = gets.chomp.to_i
     sum == inputted_sum
+  end
+
+  def take_cat_for_walk
+    puts "TAKING CAT FOR WALK NOT COMPLETED YET"
   end
 
   def get_a_job

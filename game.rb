@@ -42,6 +42,7 @@ class Game
   end
 
   def game_over?
+    return true if @players.empty?
     # game over if anyone has more than 10 cats
     # this might need to be revised or make more difficult to afford cats
 
