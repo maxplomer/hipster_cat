@@ -18,9 +18,7 @@ class Game
   end
 
   def play
-  	#play_round until game_over?
-    p @players
-    p @cities
+  	play_round until game_over?
   	game_over
   end
 
