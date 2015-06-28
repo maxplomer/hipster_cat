@@ -29,4 +29,18 @@ class Player
     @cats = []
   end
 
+  def prompt_user_for_action
+    puts "What do you want to do?"
+    puts "options: adopt a cat, move"
+    str = gets.chomp
+    if str == "adopt a cat"
+      puts "call the adopt a cat function"
+    elsif str == "move"
+      puts "call the move function"
+    else
+      puts "Try again..."
+      prompt_user_for_action
+    end
+  end
+
 end

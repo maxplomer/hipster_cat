@@ -18,7 +18,7 @@ class Game
   end
 
   def play
-  	#####play_round until game_over?
+  	play_round until game_over?
     p @players
     p @cities
   	game_over
@@ -29,7 +29,7 @@ class Game
   	#####@cities.each(&:shuffle)
 
     # do they want to take their cat for a walk if have one etc?
-    #####@players.each(&:prompt_user_for_action)
+    @players.each(&:prompt_user_for_action)
 
     #####end_round
   end
@@ -37,6 +37,16 @@ class Game
 
   def game_over
     puts "the game is over"
+  end
+
+  def game_over?
+    # game over if anyone has more than 10 cats
+    
+    @player.each do |player|
+      return true if player.cats.length > 10
+    end
+
+    false
   end
 
 

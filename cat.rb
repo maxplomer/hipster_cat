@@ -1,3 +1,5 @@
+#cats might cost money every day to own/feed, but free to adopt
+
 require 'time-lord'
 
 class Cat
