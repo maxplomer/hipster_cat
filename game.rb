@@ -22,6 +22,12 @@ class Game
   	game_over
   end
 
+  def save
+    puts "SAVING FEATURE NOT CREATED YET"
+  end
+
+  private
+
   def play_round
     print_date
     # generate random cats jobs apts, from lists, random generator, job might be taken by player 1
@@ -56,7 +62,7 @@ class Game
   def prompt_users_for_action
     # do they want to take their cat for a walk if have one etc?
     @players.each do |player|
-      player.prompt_user_for_action(@cities)
+      player.prompt_user_for_action(self)
     end
   end
 
@@ -65,9 +71,8 @@ class Game
   end
 
   def calculate_income_and_expenses
-
+    puts "CALCULATING INCOME AND EXPENSES NOT CREATED YET"
   end
-
 end
 
 

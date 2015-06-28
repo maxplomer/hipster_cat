@@ -29,7 +29,7 @@ class Player
     @cats = []
   end
 
-  def prompt_user_for_action(cities)
+  def prompt_user_for_action(game)
     puts "Hey #{self.name}, what do you want to do today?"
     puts "options: adopt a cat, take cat for walk, move, get a job, save game"
     command = gets.chomp
@@ -40,11 +40,11 @@ class Player
     when "take cat for walk"
       take_cat_for_walk
     when "move"
-      move(cities)
+      move(game.cities)
     when "get a job"
       get_a_job
     when "save game"
-      puts "calling the save game method, hasn't been created yet"
+      game.save
     else
       puts "Try again..."
       prompt_user_for_action
@@ -138,7 +138,8 @@ class Player
     number == input_number
   end
 
-  def move
+  def move(cities)
+    puts "MOVING FEATURE NOT COMPLETED YET"
     #clear jobs and apartments, keep cats with you
   end
 
