@@ -1,7 +1,6 @@
 require 'yaml'
 require_relative './city'
 require_relative './player'
-require_relative './cat'
 
 class Game
   #attr_reader :players, :pot, :deck
