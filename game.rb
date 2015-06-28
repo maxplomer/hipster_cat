@@ -23,7 +23,10 @@ class Game
   end
 
   def save
-    puts "SAVING FEATURE NOT CREATED YET"
+    saved_game = self.to_yaml
+    File.open('saved_game.txt', 'w') do |f|
+      f.puts(saved_game)
+    end
   end
 
   private
