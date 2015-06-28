@@ -9,13 +9,8 @@ class Player
     @apartment = nil
     @name = name
     @sex = sex #leaving sex a user inputed string for now
-    @jobs = []
+    @jobs = []# make sure job schedules dont conflict
     @cats = []
   end
-
-
-  # make sure job schedules dont conflict
-  # cities should hold the jobs and cats and apartments
-
 
 end
