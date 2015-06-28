@@ -69,12 +69,23 @@ class Player
     cat_number = gets.chomp.to_i
 
     if (cat_number.is_a? Numeric) && cat_number.between?(1, max_cats)
-      self.cats << @location.cats.delete_at(cat_number - 1)
-      puts "Congrats you adopted #{self.cats.last.name}"
-      puts "Your currently have #{self.cats.length} cats"
+      cat_name = @location.cats[cat_number - 1].name
+
+      passed_test = give_user_cat_test(cat_name)
+      if passed_test
+        self.cats << @location.cats.delete_at(cat_number - 1)
+        puts "Congrats you adopted #{self.cats.last.name}"
+        puts "Your currently have #{self.cats.length} cats"
+      else
+        puts "Sorry you just dont love #{cat_name} enough."
+      end
     else
       puts "You messed up adopting a cat"
     end
+  end
+
+  def give_user_cat_test(cat_name)
+    false
   end
 
   def get_a_job
@@ -97,7 +108,7 @@ class Player
     job_number = gets.chomp.to_i
 
     if (job_number.is_a? Numeric) && job_number.between?(1, max_jobs)
-      passed_test = give_user_test
+      passed_test = give_user_job_test
       if passed_test
         self.jobs << @location.jobs.delete_at(job_number - 1)
         puts "Congrats you got the job #{self.jobs.last.position} at #{self.jobs.last.company}"
@@ -110,7 +121,7 @@ class Player
     end
   end
 
-  def give_user_test
+  def give_user_job_test
     number = rand(99999999999999999999999)
     puts "Please write the following number in reverse with no spaces"
     puts number.to_s.reverse.split('').join(' ')
