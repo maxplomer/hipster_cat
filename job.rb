@@ -34,6 +34,8 @@ class Job
     @position = get_position
   end
 
+  private
+
   def get_company(city)
     COMPANIES[city].sample
   end
