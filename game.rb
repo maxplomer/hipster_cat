@@ -31,7 +31,7 @@ class Game
     prompt_users_for_action
 
 
-    current_time += 1.day
+    @current_time += 1.day
     calculate_income_and_expenses
   end
 

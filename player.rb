@@ -97,13 +97,25 @@ class Player
     job_number = gets.chomp.to_i
 
     if (job_number.is_a? Numeric) && job_number.between?(1, max_jobs)
-      self.jobs << @location.jobs.delete_at(job_number - 1)
-      puts "Congrats you got the job #{self.jobs.last.position} at #{self.jobs.last.company}"
-      puts "Your currently have #{self.jobs.length} job#{'s' if self.jobs.length != 1}"
+      passed_test = give_user_test
+      if passed_test
+        self.jobs << @location.jobs.delete_at(job_number - 1)
+        puts "Congrats you got the job #{self.jobs.last.position} at #{self.jobs.last.company}"
+        puts "Your currently have #{self.jobs.length} job#{'s' if self.jobs.length != 1}"
+      else
+        puts "Sorry you didn't get the job."
+      end
     else
       puts "You messed up getting a job"
     end
+  end
 
+  def give_user_test
+    number = rand(99999999999999999999999)
+    puts "Please write the following number in reverse with no spaces"
+    puts number.to_s.reverse.split('').join(' ')
+    input_number = gets.chomp.to_i
+    number == input_number
   end
 
   def move
