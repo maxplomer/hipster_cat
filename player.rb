@@ -92,12 +92,6 @@ class Player
     sum == inputted_sum
   end
 
-  class String
-    def my_ord
-      self.downcase.ord - 96
-    end
-  end
-
   def get_a_job
     max_jobs = @location.jobs.length
 
@@ -143,4 +137,10 @@ class Player
     #clear jobs and apartments, keep cats with you
   end
 
+end
+
+class String
+  def my_ord
+    self.downcase.ord - 96
+  end
 end
