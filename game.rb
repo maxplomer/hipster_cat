@@ -23,17 +23,21 @@ class Game
   end
 
   def play_round
+    print_date
     # generate random cats jobs apts, from lists, random generator, job might be taken by player 1
   	#####@cities.each(&:shuffle)
 
-    # do they want to take their cat for a walk if have one etc?
-    @players.each do |player|
-      player.prompt_user_for_action(@cities)
-    end
+    
+    prompt_users_for_action
 
-    #####end_round
+
+    current_time += 1.day
+    calculate_income_and_expenses
   end
 
+  def print_date
+    puts "\nCurrent date is: #{@current_time.month}/#{@current_time.day}/#{@current_time.year}\n\n"
+  end
 
   def game_over
     puts "the game is over"
@@ -50,6 +54,16 @@ class Game
     false
   end
 
+  def prompt_users_for_action
+    # do they want to take their cat for a walk if have one etc?
+    @players.each do |player|
+      player.prompt_user_for_action(@cities)
+    end
+  end
+
+  def calculate_income_and_expenses
+
+  end
 
 end
 
