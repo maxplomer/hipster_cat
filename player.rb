@@ -54,8 +54,8 @@ class Player
     puts "Input a cat number 1-#{max_cats}"
     cat_number = gets.chomp.to_i
 
-    if cat_number.is_a? Numeric && cat_number.between(1, max_cats)
-      self.cats << @location.cats.delete_at(cat_number)
+    if (cat_number.is_a? Numeric) && cat_number.between?(1, max_cats)
+      self.cats << @location.cats.delete_at(cat_number - 1)
       puts "Congrats you adopted #{self.cats.last.name}"
       puts "Your currently have #{self.cats.length} cats"
     else
