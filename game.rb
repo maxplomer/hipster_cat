@@ -17,18 +17,18 @@ class Game
   end
 
   def play
-  	play_round until game_over?
+  	#####play_round until game_over?
   	game_over
   end
 
   def play_round
     # generate random cats jobs apts, from lists, random generator, job might be taken by player 1
-  	@cities.each(&:shuffle)
+  	#####@cities.each(&:shuffle)
 
     # do they want to take their cat for a walk if have one etc?
-    @players.each(&:prompt_user_for_action)
+    #####@players.each(&:prompt_user_for_action)
 
-    end_round
+    #####end_round
   end
 
 
