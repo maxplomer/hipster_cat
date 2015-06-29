@@ -22,3 +22,7 @@ adopt a cat should appear in cat? or maybe fine this way
 
 
 haven't implemented buy your cat a sweater feature
+
+
+
+the cats should give birth to new cats
