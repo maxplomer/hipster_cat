@@ -160,9 +160,37 @@ class Player
       return
     end
 
-    puts "I found the following"
+    puts "I found the following apartments to rent"
 
+    city.apartments.each_with_index do |apartment, index|
+      puts "Apartment #{index + 1}: #{apartment.description}" 
+    end
+
+    if max_apartments == 1
+      puts "There is only 1 apartment to rent, you want it? yes or no"
+      user_wants_apartment = gets.chomp == 'yes'
+      if user_wants_apartment
+        apartment = city.apartments.delete_at(0)
+        take_apartment(city, apartment) 
+      end
+      return
+    end
+
+    puts "Input an apartment number 1-#{max_apartments}"
+    apartment_number = gets.chomp.to_i
+    if (apartment_number.is_a? Numeric) && apartment_number.between?(1, max_apartments)
+      apartment = city.apartments.delete_at(apartment_number)
+      take_apartment(city, apartment)
+    else
+      puts "You messed up moving."
+    end
+  end
+
+  def take_apartment(city, apartment)
     #clear jobs and apartments, keep cats with you
+    @location = city
+    @apartment = apartment
+    @jobs = []
   end
 
 end

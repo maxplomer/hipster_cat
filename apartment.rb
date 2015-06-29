@@ -6,7 +6,6 @@ class Apartment
     "spacious",
     "industrial",
     "chill",
-    "",
     "groundlevel"
   ]
 
