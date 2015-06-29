@@ -19,3 +19,6 @@ quit job/ get rid of cat?
 organization is sketchy, game save should be in game.rb not player
 
 adopt a cat should appear in cat? or maybe fine this way
+
+
+haven't implemented buy your cat a sweater feature
