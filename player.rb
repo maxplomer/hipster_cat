@@ -48,7 +48,7 @@ class Player
       game.save
     else
       puts "Try again..."
-      prompt_user_for_action
+      prompt_user_for_action(game)
     end
   end
 
@@ -140,7 +140,11 @@ class Player
   end
 
   def move(cities)
-    puts "MOVING FEATURE NOT COMPLETED YET"
+    puts "You currently live in #{@location.name}"
+    city_names = []
+    cities.each {|i| city_names << i.name}
+    city_names.delete(@location.name)
+    puts "You wanna move to #{city_names.join(' or ')}?"
     #clear jobs and apartments, keep cats with you
   end
 
