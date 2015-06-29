@@ -26,3 +26,7 @@ haven't implemented buy your cat a sweater feature
 
 
 the cats should give birth to new cats
+
+
+
+option to buy cat nip, should print text are of cat smiling?
