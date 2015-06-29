@@ -96,6 +96,7 @@ class Player
 
   def take_cat_for_walk
     puts "TAKING CAT FOR WALK NOT COMPLETED YET"
+    #should really be a method called on the cat
   end
 
   def get_a_job
@@ -145,6 +146,22 @@ class Player
     cities.each {|i| city_names << i.name}
     city_names.delete(@location.name)
     puts "You wanna move to #{city_names.join(' or ')}?"
+    input_city = gets.chomp
+    city = cities.select {|i| i.name == input_city }.first
+    if city.nil?
+      puts "never heard of that place"
+      return
+    end
+
+    max_apartments = city.apartments.length
+
+    if max_apartments == 0
+      puts "There are no apartments to rent"
+      return
+    end
+
+    puts "I found the following"
+
     #clear jobs and apartments, keep cats with you
   end
 
