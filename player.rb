@@ -122,7 +122,7 @@ class Player
       if passed_test
         self.jobs << @location.jobs.delete_at(job_number - 1)
         puts "Congrats you got the job #{self.jobs.last.position} at #{self.jobs.last.company}"
-        puts "Your currently have #{self.jobs.length} job#{'s' if self.jobs.length != 1}"
+        puts "You currently have #{self.jobs.length} job#{'s' if self.jobs.length != 1}"
       else
         puts "Sorry you didn't get the job."
       end
