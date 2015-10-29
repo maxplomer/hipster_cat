@@ -30,3 +30,6 @@ the cats should give birth to new cats
 
 
 option to buy cat nip, should print text are of cat smiling?
+
+
+use text art? or can i print pictures to terminal?
